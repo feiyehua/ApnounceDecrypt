@@ -118,11 +118,11 @@ void incrementHex(std::string &hexString) {
     //std::transform(hexString.begin(), hexString.end(), hexString.begin(), ::toupper);
 }
 
-std::string startPoint="13a54c0";
+std::string startPoint="1c9605160";
 std::string goal="abc21d3f9d5d98ecae9f3d514475290171f2bbed";
 int main() {
    
-   std::cin>>startPoint;
+   //std::cin>>startPoint;
    std::string hexInput = startPoint; // 替换为你的16进制数
    std::string sha1Result = calculateSHA1(hexInput);
    int cnt=0;
@@ -132,7 +132,7 @@ int main() {
         cnt++;
         incrementHex(hexInput);
         std::string sha1Result = calculateSHA1(hexInput);
-        if(cnt>=100000)
+        if(cnt>=1000000)
         {
             cnt=0;
             std::cout<<hexInput<<" "<<sha1Result<<std::endl;
